@@ -1,0 +1,38 @@
+*{
+    text-decoration: none;
+}
+
+.menu__container{
+    margin: 10px;
+    color: white;
+    background: rgb(51, 46, 47);
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+}
+
+.menu__title{
+    margin: 10px;
+    margin-bottom: 10px;
+    font-size: 4em;
+        background: -webkit-linear-gradient(darkcyan,white);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: white;
+}
+
+.menu__{
+    margin: 10px;
+}
+
+.link{
+    font-size: 1.5em ;
+    color: white;
+    margin: 10px;
+}
+
+.link:hover{
+    text-decoration: underline;
+    color: darkcyan;
+}
+
