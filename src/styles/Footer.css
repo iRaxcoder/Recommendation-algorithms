@@ -1,0 +1,14 @@
+.footer__container{
+    width: 100%;
+    color: white;
+    position: absolute;
+    top: 100vh;
+    background: rgb(51, 46, 47);
+}
+
+.information{
+    text-align: center;
+    color: darkcyan;
+    width: 100%;
+    line-height: 70px;
+}
