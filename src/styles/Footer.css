@@ -12,3 +12,7 @@
     width: 100%;
     line-height: 70px;
 }
+
+.information:hover{
+    cursor: context-menu;
+}
