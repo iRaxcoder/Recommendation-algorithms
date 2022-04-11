@@ -3,12 +3,13 @@
 }
 
 .menu__container{
-    margin: 10px;
+    margin: 0 10px 10px 10px;
     color: white;
     background: rgb(51, 46, 47);
     padding: 10px;
     position: fixed;
     width: 100%;
+    z-index: 10;
 }
 
 .menu__title{
