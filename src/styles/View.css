@@ -1,0 +1,53 @@
+.container__{
+    overflow: hidden;
+    margin: 15px;
+    padding-top: 12%;
+}
+
+h2{
+    margin: 5px;
+    background: -webkit-linear-gradient(#008b8b,rgb(69, 66, 66));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: white;
+}
+
+h3{
+    margin: 10px;
+}
+
+li{
+    margin: 10px;
+}
+
+.response__container{
+    margin: 20px;
+    padding: 10px;
+    border:1px solid rgb(10, 10, 10);
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    background:rgb(220, 228, 228);
+    grid-auto-rows: minmax(auto,auto);
+}
+
+.style__container{
+    margin: 2px;
+    padding: 2px;
+}
+
+.instruction__{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.result__{
+    font-size: 20px;
+    color: red;
+    border: 1px dotted black;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    margin-left: 35%;
+    padding: 20px;
+}

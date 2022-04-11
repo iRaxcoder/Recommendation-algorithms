@@ -1,5 +1,5 @@
 
-import "./../styles/Footer.css"
+import "../../styles/Footer.css"
 
 const Footer = () => (
     <div className="footer__container"> 
