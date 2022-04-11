@@ -5,7 +5,7 @@ import { useState } from 'react';
 import CalcButton from '../components/CalcButton';
 import { useForm } from "react-hook-form";
 import exercise from '../service/exercise';
-//h
+
 const LearningStyle = () => {
    const instructions = [
        "Para utilizar el instrumento usted debe conceder una calificación alta a aquellas palabras que mejor caracterizan la forma en que usted aprende, y una calificación baja a las palabras que menos caracterizan su estilo de aprendizaje.",
