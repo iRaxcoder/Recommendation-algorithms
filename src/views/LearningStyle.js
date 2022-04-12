@@ -1,10 +1,9 @@
-import '../styles/View.css'
 import ResponseItem from '../components/ResponseItem';
-import Instruction from '../components/Instruction';
 import { useState } from 'react';
 import CalcButton from '../components/CalcButton';
 import { useForm } from "react-hook-form";
 import exercise from '../service/exercise';
+import SectionHeader from '../components/Layout/SectionHeader';
 
 const LearningStyle = () => {
    const instructions = [
@@ -30,12 +29,9 @@ const LearningStyle = () => {
    }
     return (
     <div className="container__"> 
-       <div className='instruction__'>
-        <h2>Estilo de aprendizaje</h2>
-        <Instruction instructions={instructions}/>
-       </div>
+       <SectionHeader title="Calcular estilo de aprendizaje" instructions = {instructions}/>
        <hr/>    
-       <h3>Yo aprendo...</h3>
+       <h3 style={{marginLeft:"23px"}}>Yo aprendo<span className='learning__effect'>...</span></h3>
        <form noValidate onSubmit={handleSubmit(handleResults)}>
             <div className='response__container'>
                     <div className='style__container'>

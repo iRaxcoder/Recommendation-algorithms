@@ -1,7 +1,7 @@
 .container__{
     overflow: hidden;
-    margin: 15px;
     padding-top: 12%;
+    margin-left: 20px;
 }
 
 h2{
@@ -23,11 +23,14 @@ li{
 .response__container{
     margin: 20px;
     padding: 10px;
-    border:1px solid rgb(10, 10, 10);
     display: grid;
     grid-template-columns: repeat(4,25%);
     background:rgb(220, 228, 228);
     grid-auto-rows: minmax(auto,auto);
+    -webkit-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
+box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
+border-radius: 10px;
 }
 
 .style__container{
@@ -50,4 +53,22 @@ li{
     justify-content: center;
     margin-left: 33%;
     padding: 20px;
+}
+
+.learning__effect{
+    font-size: 18px;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 2px solid;
+    overflow: hidden;
+    animation: typing 2s steps(13), blink .5s infinite step-end alternate;
+    
+}
+
+@keyframes type {
+    from {width: 0 }
+}
+
+@keyframes blink {
+    50% {border-color: transparent;}
 }
