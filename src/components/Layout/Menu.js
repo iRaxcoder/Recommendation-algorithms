@@ -8,9 +8,10 @@ const Menu = () => (
         <nav className="menu__">
             <Link className="link" to="/learning-style">Estilo de aprendizaje</Link> |{" "}
             <Link className="link" to="/origin-place">Recinto de origen </Link> |{" "}
-            <Link className="link" to="/expenses">Sexo de estudiante</Link> |{" "}
-            <Link className="link" to="/expenses">Tipo de profesor</Link>|{" "}
-            <Link className="link" to="/expenses">Clase de red</Link>
+            <Link className="link" to="/student-genre">Sexo de estudiante</Link> |{" "}
+            <Link className="link" to="/guess-learning-style">Ad. Estilo de aprendizaje </Link>|{" "}
+            <Link className="link" to="/professor-type">Tipo de profesor</Link>|{" "}
+            <Link className="link" to="/network-class">Clase de red</Link>
         </nav>
     </div>
 )

@@ -1,5 +1,4 @@
 import CustomSelect from "./CustomSelect";
-import "../styles/Components.css";
 
 const ResponseItem = (props) => (
     <div className="response__item">
