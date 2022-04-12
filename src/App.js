@@ -3,6 +3,7 @@ import Footer from "./components/Layout/Footer.js";
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import './App.css'
 import LearningStyle from "./views/LearningStyle.js";
+import OriginPlace from "./views/OriginPlace.js";
 function App() {
   return (
     <div className="App">
@@ -10,7 +11,8 @@ function App() {
           <Menu/>
           <Footer/>
           <Routes>
-            <Route path="/Learning-style" element={<LearningStyle />} />
+            <Route path="/learning-style" element={<LearningStyle />} />
+            <Route path="/origin-place" element={<OriginPlace />} />
           </Routes>
      </BrowserRouter>
     </div>
