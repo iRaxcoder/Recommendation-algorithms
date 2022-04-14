@@ -13,7 +13,6 @@ function App() {
     <div className="App">
        <BrowserRouter>
           <Menu/>
-          <Footer/>
           <Routes>
             <Route path="/learning-style" element={<LearningStyle />} />
             <Route path="/origin-place" element={<OriginPlace />} />
@@ -22,6 +21,7 @@ function App() {
             <Route path="/network-class" element={<NetworkClass />} />
             <Route path="/guess-learning-style" element={<GuessLearningStyle />} />
           </Routes>
+          <Footer/>
      </BrowserRouter>
     </div>
   );

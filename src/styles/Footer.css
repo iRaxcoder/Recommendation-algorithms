@@ -17,3 +17,13 @@
 .information:hover{
     cursor: context-menu;
 }
+
+@media (max-width: 768px){
+    .footer__container{
+       top: auto;
+       height: min-content;
+    }
+    .information{
+        font-size: 10px;
+    }
+}

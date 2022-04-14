@@ -1,9 +1,16 @@
-import CustomSelect from "./CustomSelect";
+import CustomSelectStyle from "./CustomSelectStyle";
+import CustomSelectAdvanced from "./CustomSelectAdvanced";
 
 const ResponseItem = (props) => (
     <div className="response__item">
-        <CustomSelect name={props.name} register={props.register}/>
+        <>
+        {props.advanced?
+        <CustomSelectAdvanced options={props.options} name={props.name} register={props.register}/>
+        :
+        <CustomSelectStyle name={props.name} register={props.register}/>
+        }
         <label>{props.type}</label>
+        </>
     </div>
 )
 

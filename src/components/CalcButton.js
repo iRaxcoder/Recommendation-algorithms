@@ -1,6 +1,6 @@
-const CalcButton = (props) => (
-    <button type="submit" onClick={props.fun} className={"calc__button"}>
-       Calcular
+const CalcButton = () => (
+    <button type="submit" className={"calc__button"}>
+        Calcular
     </button>
 )
 

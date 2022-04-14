@@ -79,7 +79,7 @@ const LearningStyle = () => {
                             <ResponseItem register={register} name="36" type={"abierto"}/>
                     </div>
             </div>
-            {"estilos: "+ styles.ea + " " + styles.ca + " "+ styles.or + " "+ styles.ec}
+            {/* {"estilos: "+ styles.ea + " " + styles.ca + " "+ styles.or + " "+ styles.ec} */}
             <CalcButton/>
        </form>   
 
