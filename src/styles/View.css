@@ -62,7 +62,6 @@ border-radius: 10px;
     border-right: 2px solid;
     overflow: hidden;
     animation: typing 2s steps(13), blink .5s infinite step-end alternate;
-    
 }
 
 @keyframes type {
@@ -71,4 +70,11 @@ border-radius: 10px;
 
 @keyframes blink {
     50% {border-color: transparent;}
+}
+
+@media (max-width: 768px){
+    .instruction__{
+        padding: 200px 20px 0;
+        font-size: 15px;
+    }
 }
