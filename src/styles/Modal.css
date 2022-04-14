@@ -43,3 +43,13 @@
     font-size: 30px;
     color: rgb(53, 167, 167)
   }
+
+  @media (max-width:768px){
+    .modal_{
+      font-size: 15px;
+      overflow-y: scroll;
+    }
+    .modal-header{
+      font-size: 20px;
+    }
+  }

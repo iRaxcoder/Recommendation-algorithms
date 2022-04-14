@@ -1,4 +1,4 @@
-const CustomSelect = ({ register, name, ...rest }) =>{
+const CustomSelectStyle = ({ register, name, ...rest }) =>{
   return (
     <select {...register(name)} {...rest}>
       <option key={1} value={1}>1</option>
@@ -9,4 +9,4 @@ const CustomSelect = ({ register, name, ...rest }) =>{
   )
 }
 
-export default CustomSelect;
+export default CustomSelectStyle;

@@ -5,6 +5,7 @@
 }
 
 h2{
+    font-size: 2em;
     margin: 5px;
     background: -webkit-linear-gradient(#008b8b,rgb(69, 66, 66));
         -webkit-background-clip: text;
@@ -28,9 +29,9 @@ li{
     background:rgb(220, 228, 228);
     grid-auto-rows: minmax(auto,auto);
     -webkit-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
-border-radius: 10px;
+    -moz-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
+    box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
+    border-radius: 10px;
 }
 
 .style__container{
@@ -64,6 +65,38 @@ border-radius: 10px;
     animation: typing 2s steps(13), blink .5s infinite step-end alternate;
 }
 
+.algorithm__form{
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.form__item_group{
+    padding: 10px;
+    background:rgb(220, 228, 228);
+    margin-bottom: 10px;
+}
+.algorithm__form > label{
+    margin-right: 5px;
+}
+.form__item{
+    margin-top: 10px;
+}
+
+input[type="number"]{
+    width: 100px;
+}
+
+input{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+select{
+    font-size: 1em;
+}
+
 @keyframes type {
     from {width: 0 }
 }
@@ -73,8 +106,37 @@ border-radius: 10px;
 }
 
 @media (max-width: 768px){
+    .container__{
+        margin: auto;
+    }
     .instruction__{
         padding: 200px 20px 0;
         font-size: 15px;
+    }
+    .response__container{
+        grid-template-columns: repeat(2,1fr);
+        overflow-x: auto;
+        margin: auto;
+    }
+    .algorithm__form{
+        padding: 10px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .form__item_group{
+        padding: 10px;
+        background:rgb(220, 228, 228);
+        margin-bottom: 10px;
+    }
+    .algorithm__form > label{
+        margin-right: 5px;
+    }
+    .form__item{
+        margin-top: 10px;
+    }
+
+    input[type="number"]{
+        width: 50px;
     }
 }

@@ -13,7 +13,7 @@ const Instruction = ({instructions}) => {
         <h3>Instrucciones</h3>
         <ul>
                 {instructions.map((i=>(
-                    <li>{i}</li>
+                    <li key={i}>{i}</li>
                 )))}
         </ul>
         </CustomModal>
