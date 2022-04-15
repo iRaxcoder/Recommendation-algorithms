@@ -2,6 +2,8 @@ import SectionHeader from "../components/Layout/SectionHeader";
 import { useForm } from "react-hook-form";
 import CalcButton from "../components/CalcButton";
 import ResponseItem from "../components/ResponseItem";
+import { useState } from "react";
+import exercise from "../service/exercise";
 
 const GuessLearningStyle = () => {
     const { register, handleSubmit } = useForm();
@@ -10,8 +12,11 @@ const GuessLearningStyle = () => {
         "Debe seccionar Su último promedio de matrícula y su sexo.",
         "El algoritmo puede no ser preciso."
      ];
-    const handleResults = () => {
-
+     const [result, setResult]=useState(null);
+    const handleResults = (data) => {
+        exercise.getGuessStyle({genre: data.genre, avr: Number(data.avr), place: data.place}).then(response=>{
+            setResult(response);
+        });
     }
     return (
         <div className="container__">
@@ -20,18 +25,26 @@ const GuessLearningStyle = () => {
             <form className="algorithm__form" noValidate onSubmit={handleSubmit(handleResults)}>
                 <div className="form__item_group">
                     <div className="form__item">
-                    <ResponseItem advanced={true} options={["Masculino","Femenino"]} register={register} name="1" type={" Sexo"}/>
+                    <ResponseItem advanced={true} options={["M","F"]} register={register} name="genre" type={" Sexo"}/>
                     </div>
                     <div className="form__item">
                         <label>Prom. Matricula: </label>
-                        <input {...register("prom")} type={"number"}></input>
+                        <input {...register("avr")} type={"number"}></input>
                     </div>
                     <div className="form__item">
-                    <ResponseItem advanced={true} options={["Turrialba","Paraíso","Guápiles"]} register={register} name="1" type={" Recinto"}/>
+                    <ResponseItem advanced={true} options={["Turrialba","Paraiso"]} register={register} name="place" type={" Recinto"}/>
                     </div>
                 </div>
                 <CalcButton/>
             </form>
+            {
+            result?
+                <div className="result__">
+                    <p>¡Su estilo de aprendizaje es: {result}!</p>
+                </div>
+            :
+                <></>
+            }
         </div>
     );
 }

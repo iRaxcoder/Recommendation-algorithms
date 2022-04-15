@@ -2,6 +2,8 @@ import SectionHeader from "../components/Layout/SectionHeader";
 import CalcButton from '../components/CalcButton';
 import { useForm } from "react-hook-form";
 import ResponseItem from "../components/ResponseItem";
+import exercise from "../service/exercise";
+import { useState } from "react";
 
 const NetworkClass = () => {
     const instructions = [
@@ -10,8 +12,11 @@ const NetworkClass = () => {
         ,"Por último seleccionar el costo de la red (bajo, medio, alto)."
      ];
      const { register, handleSubmit } = useForm();
-     const handleResults = () => {
-
+     const [result, setResult]=useState(null);
+     const handleResults = (data) => {
+        exercise.getClassType(data).then(response=>{
+            setResult(response);
+        });
     }
     return (
         <div className="container__">
@@ -20,21 +25,29 @@ const NetworkClass = () => {
             <form className="algorithm__form" noValidate onSubmit={handleSubmit(handleResults)}>
                 <div className="form__item_group">
                     <div className="form__item">
-                    <ResponseItem advanced={true} options={["2","3","4","5"]} register={register} name="1" type={" Fiabilidad"}/>
+                    <ResponseItem val={["2","3","4","5"]} advanced={true} options={["2","3","4","5"]} register={register} name="reliability" type={" Fiabilidad"}/>
                     </div>
                     <div className="form__item">
                         <label>Número de links: </label>
                         <input {...register("range")} type={"number"} min={7} max={20}></input>
                     </div>
                     <div className="form__item">
-                    <ResponseItem advanced={true} options={["Baja","Media","Alta"]} register={register} name="2" type={" Capacidad"}/>
+                    <ResponseItem val={["Low","Medium","High"]} advanced={true} options={["Baja","Media","Alta"]} register={register} name="capacity" type={" Capacidad"}/>
                     </div>
                     <div className="form__item">
-                    <ResponseItem advanced={true} options={["Baja","Media","Alta"]} register={register} name="3" type={" Costo de red"}/>
+                    <ResponseItem val={["Low","Medium","High"]} advanced={true} options={["Baja","Media","Alta"]} register={register} name="cost" type={" Costo de red"}/>
                     </div>
                 </div>
                 <CalcButton/>
             </form>
+            {
+                result?
+                        <div className="result__">
+                                <p>¡La clase de red es: {result}!</p>
+                        </div>
+                    :
+                        <></>
+            }
         </div>
     );
 }
