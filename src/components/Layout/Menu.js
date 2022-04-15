@@ -1,7 +1,6 @@
 import { useState } from "react"
-import {Link} from "react-router-dom"
 import "../../styles/Menu.css"
-
+import CustomLink from "../CustomLink";
 const Menu = () => {
     const [menuMainClass,setMenuMainClass] = useState("menu__ ");
     const [isVisibleToggle,setIsVisibleToggle] = useState("");
@@ -17,12 +16,12 @@ const Menu = () => {
         <button onClick={onToggleAction} className="menu__toggle"></button>
         <hr></hr>
         <nav className={menuMainClass+isVisibleToggle}>
-            <Link className="link" to="/learning-style">Estilo de aprendizaje</Link>{" "}
-            <Link className="link" to="/origin-place">Recinto de origen </Link>{" "}
-            <Link className="link" to="/student-genre">Sexo de estudiante</Link>{" "}
-            <Link className="link" to="/guess-learning-style">Ad. Estilo de aprendizaje </Link>{" "}
-            <Link className="link" to="/professor-type">Tipo de profesor</Link>{" "}
-            <Link className="link" to="/network-class">Clase de red</Link>
+            <CustomLink className={"link "} to="/learning-style">Estilo de aprendizaje</CustomLink>
+            <CustomLink className={"link "} to="/origin-place">Recinto de origen </CustomLink>
+            <CustomLink className={"link "} to="/student-genre">Sexo de estudiante</CustomLink>
+            <CustomLink className={"link "} to="/guess-learning-style">Ad. Estilo de aprendizaje </CustomLink>
+            <CustomLink className={"link "} to="/professor-type">Tipo de profesor</CustomLink>
+            <CustomLink className={"link "} to="/network-class">Clase de red</CustomLink>
         </nav>
     </div>
     );

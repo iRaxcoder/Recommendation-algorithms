@@ -5,7 +5,7 @@ const ResponseItem = (props) => (
     <div className="response__item">
         <>
         {props.advanced?
-        <CustomSelectAdvanced options={props.options} name={props.name} register={props.register}/>
+        <CustomSelectAdvanced val={props.val} options={props.options} name={props.name} register={props.register}/>
         :
         <CustomSelectStyle name={props.name} register={props.register}/>
         }

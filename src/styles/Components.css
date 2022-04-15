@@ -52,8 +52,9 @@ select,input{
         font-size: 1.2em;
     }
     .response__item{
-        width: min-content;
+        width: 77%;
         margin-left: 20px;
+        overflow-x: auto;
     }
 
     

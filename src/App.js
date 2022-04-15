@@ -14,6 +14,7 @@ function App() {
        <BrowserRouter>
           <Menu/>
           <Routes>
+          <Route path="/" element={<LearningStyle />} />
             <Route path="/learning-style" element={<LearningStyle />} />
             <Route path="/origin-place" element={<OriginPlace />} />
             <Route path="/student-genre" element={<StudenGenre />} />
