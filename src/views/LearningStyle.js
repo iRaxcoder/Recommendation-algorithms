@@ -17,10 +17,27 @@ const LearningStyle = () => {
    const { register, handleSubmit } = useForm();
    const handleResults = (d) => {
     setStyles({
-        ec:parseInt(d["2"]) + parseInt(d["3"]) + parseInt(["4"]) + parseInt(["5"]) + parseInt(["7"]) + parseInt(["8"]),
-        or: parseInt(d["10"]) + parseInt(d["12"]) + parseInt(["12"]) + parseInt(["16"]) + parseInt(["17"]) + parseInt(["18"]),
-        ca:parseInt(d["20"]) + parseInt(d["21"]) + parseInt(["22"]) + parseInt(["23"]) + parseInt(["26"]) + parseInt(["27"]),
-        ea:parseInt(d["28"]) + parseInt(d["30"]) + parseInt(["6"]) + parseInt(["7"]) + parseInt(["8"]) + parseInt(["9"])});
+        ec: parseInt(d["2"]) + parseInt(d["11"]) + parseInt(d["20"]) + parseInt(d["29"]) + parseInt(d["3"]) + parseInt(d["12"])+
+        parseInt(d["21"])+parseInt(d["30"])+parseInt(d["4"])+parseInt(d["13"])+parseInt(d["22"])+parseInt(d["31"])+parseInt(d["5"])+
+        parseInt(d["14"])+parseInt(d["23"])+parseInt(d["32"])+parseInt(d["7"])+parseInt(d["16"])+parseInt(d["25"])+parseInt(d["34"])+
+        parseInt(d["8"])+parseInt(d["17"])+parseInt(d["26"])+parseInt(d["35"]),
+
+        or: parseInt(d["1"]) + parseInt(d["10"]) + parseInt(d["19"]) + parseInt(d["28"]) +parseInt(d["3"]) + parseInt(d["12"])+
+        parseInt(d["21"])+parseInt(d["30"])+parseInt(d["6"]) + parseInt(d["15"])+ parseInt(d["24"]) + parseInt(d["33"])+ 
+        parseInt(d["7"])+parseInt(d["16"])+parseInt(d["25"])+parseInt(d["34"])+ parseInt(d["8"])+parseInt(d["17"])+parseInt(d["26"])+
+        parseInt(d["35"])+parseInt(d["9"])+parseInt(d["18"])+parseInt(d["27"])+parseInt(d["36"]),
+        
+        ca: parseInt(d["2"]) + parseInt(d["11"]) + parseInt(d["20"]) + parseInt(d["29"])+parseInt(d["3"]) + 
+        parseInt(d["12"])+ parseInt(d["21"])+parseInt(d["30"])+parseInt(d["4"])+parseInt(d["13"])+parseInt(d["22"])+
+        parseInt(d["31"])+parseInt(d["5"])+ parseInt(d["14"])+parseInt(d["23"])+parseInt(d["32"])+parseInt(d["8"])+
+        parseInt(d["17"])+parseInt(d["26"])+parseInt(d["35"])+parseInt(d["9"])+parseInt(d["18"])+parseInt(d["27"])+
+        parseInt(d["36"]),
+       
+        ea:parseInt(d["1"]) + parseInt(d["10"]) + parseInt(d["19"]) + parseInt(d["28"])+parseInt(d["3"]) + parseInt(d["12"])+
+        parseInt(d["21"])+parseInt(d["30"])+parseInt(d["6"]) + parseInt(d["15"])+ parseInt(d["24"]) + parseInt(d["33"])+
+        parseInt(d["7"])+parseInt(d["16"])+parseInt(d["25"])+parseInt(d["34"])+parseInt(d["8"])+parseInt(d["17"])+parseInt(d["26"])+
+        parseInt(d["35"])+parseInt(d["9"])+parseInt(d["18"])+parseInt(d["27"])+parseInt(d["36"])
+        });
 
 //     console.log("Valor de ec: "+ ec + " Valor de or: "+ or + " Valor de ca: "+ ca + " Valor de ea: "+ ea);
     exercise.getLearningStyle({ec:styles.ec,or:styles.or,ca:styles.ca,ea:styles.ea}).then(response=>{
