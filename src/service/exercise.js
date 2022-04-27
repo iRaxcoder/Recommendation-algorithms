@@ -1,9 +1,11 @@
 import axios from "axios";
 
+var BASE_URL= "https://algorithm-recommendation-server.vercel.app/";
+
 const exercise = {
     getLearningStyle: async (data) => {
         //loading.style.display="block";
-        const response = await axios.post("http://localhost:3050/learning-style", { data })
+        const response = await axios.post(BASE_URL+"learning-style", { data })
             .then((response) => {
                 return response.data;
             }).catch(error => {
@@ -16,7 +18,7 @@ const exercise = {
     },
     getOriginPlace: async (data) => {
         //loading.style.display="block";
-        const response = await axios.post("http://localhost:3050/origin-place", { data })
+        const response = await axios.post(BASE_URL+"origin-place", { data })
             .then((response) => {
                 return response.data;
             }).catch(error => {
@@ -29,7 +31,7 @@ const exercise = {
     },
     getStudentSex: async (data) => {
         //loading.style.display="block";
-        const response = await axios.post("http://localhost:3050/student-sex", { data })
+        const response = await axios.post(BASE_URL+"student-sex", { data })
             .then((response) => {
                 return response.data;
             }).catch(error => {
@@ -42,7 +44,7 @@ const exercise = {
     },
     getGuessStyle: async (data) => {
         //loading.style.display="block";
-        const response = await axios.post("http://localhost:3050/guess-style", { data })
+        const response = await axios.post(BASE_URL+"guess-style", { data })
             .then((response) => {
                 return response.data;
             }).catch(error => {
@@ -55,7 +57,7 @@ const exercise = {
     },
     getProfessorType: async (data) => {
         //loading.style.display="block";
-        const response = await axios.post("http://localhost:3050/professor-type", { data })
+        const response = await axios.post(BASE_URL+"professor-type", { data })
             .then((response) => {
                 return response.data;
             }).catch(error => {
@@ -68,7 +70,7 @@ const exercise = {
     },
     getClassType: async (data) => {
         //loading.style.display="block";
-        const response = await axios.post("http://localhost:3050/class-type", { data })
+        const response = await axios.post(BASE_URL+"class-type", { data })
             .then((response) => {
                 return response.data;
             }).catch(error => {
