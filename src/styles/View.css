@@ -107,11 +107,12 @@ select{
 
 @media (max-width: 768px){
     .container__{
+        padding-top: 0;
         margin: auto;
     }
     .instruction__{
         padding: 200px 20px 0;
-        font-size: 15px;
+        font-size: 14px;
     }
     .response__container{
         grid-template-columns: repeat(2,1fr);
