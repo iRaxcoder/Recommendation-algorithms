@@ -65,10 +65,9 @@
         position: fixed;
         background: rgb(77, 68, 70);
         left: 200%;
-        padding: 10px;
         width: 100%;
         height: calc(100%-20px);
-        margin: auto auto;
+        margin: auto;
         transition: left .5s;
         align-items: center;
         justify-content: center;

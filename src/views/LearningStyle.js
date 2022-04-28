@@ -46,7 +46,7 @@ const LearningStyle = () => {
    }
     return (
     <div className="container__"> 
-       <SectionHeader title="Calcular estilo de aprendizaje" instructions = {instructions}/>
+       <SectionHeader instructionTitle="Calcular estilo de aprendizaje" title="Calcular estilo de aprendizaje" instructions = {instructions}/>
        <hr/>    
        <h3 style={{marginLeft:"23px"}}>Yo aprendo<span className='learning__effect'>...</span></h3>
        <form noValidate onSubmit={handleSubmit(handleResults)}>

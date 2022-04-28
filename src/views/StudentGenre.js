@@ -19,7 +19,7 @@ const StudenGenre = () => {
     }
     return (
         <div className="container__">
-            <SectionHeader title= "Adivinar sexo de estudiante" instructions={instructions}/>
+            <SectionHeader instructionTitle="Adivinar sexo de estudiante" title= "Adivinar sexo de estudiante" instructions={instructions}/>
             <hr/>
             <form className="algorithm__form" noValidate onSubmit={handleSubmit(handleResults)}>
                 <div className="form__item_group">

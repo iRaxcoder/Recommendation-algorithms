@@ -26,7 +26,7 @@ li{
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(4,25%);
-    background:rgb(220, 228, 228);
+    background:#dce4e4;
     grid-auto-rows: minmax(auto,auto);
     -webkit-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
@@ -139,6 +139,10 @@ select{
 
     input[type="number"]{
         width: 50px;
+    }
+
+    .result__{
+        overflow-x: auto;
     }
 
     

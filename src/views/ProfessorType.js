@@ -21,7 +21,7 @@ const ProfessorType = () => {
     }
     return (
         <div className="container__">
-            <SectionHeader title= "Adivinar tipo de profesor" instructions={instructions}/>
+            <SectionHeader instructionTitle="Adivinar tipo de profesor" title= "Adivinar tipo de profesor" instructions={instructions}/>
             <hr/>
             <form noValidate onSubmit={handleSubmit(handleResults)}>
                 <div className='response__container'>

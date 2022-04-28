@@ -4,6 +4,7 @@ import CalcButton from "../components/CalcButton";
 import ResponseItem from "../components/ResponseItem";
 import exercise from "../service/exercise";
 import { useState } from "react";
+import Loader from "../components/Layout/Loader";
 const OriginPlace = () => {
     const { register, handleSubmit } = useForm();
     const instructions = [
@@ -12,14 +13,17 @@ const OriginPlace = () => {
        "El algoritmo puede no ser preciso."
     ];
     const [result, setResult]=useState(null);
+    const [isLoading, setIsloading] = useState(false);
     const handleResults = (d) => {
+        setIsloading(true);
         exercise.getOriginPlace({style: d.style, avr: Number(d.average), genre: d.genre}).then(response=>{
             setResult(response);
         });
+        setIsloading(false);
     }
     return (
         <div className="container__">
-            <SectionHeader title= "Adivinar recinto de origen" instructions={instructions}/>
+            <SectionHeader instructionTitle="Adivinar recinto de origen" title= "Adivinar recinto de origen" instructions={instructions}/>
             <hr/>
             <form className="algorithm__form" noValidate onSubmit={handleSubmit(handleResults)}>
                 <div className="form__item_group">
@@ -34,6 +38,12 @@ const OriginPlace = () => {
                 </div>
                 <CalcButton/>
             </form>
+            {
+                isLoading?
+                    <Loader/>
+                :
+                    <></>
+            }
             {
                 result?
                         <div className="result__">

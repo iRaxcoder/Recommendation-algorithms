@@ -20,7 +20,7 @@ const NetworkClass = () => {
     }
     return (
         <div className="container__">
-            <SectionHeader title= "Adivinar clase de red" instructions={instructions}/>
+            <SectionHeader instructionTitle="Adivinar clase de red" title= "Adivinar clase de red" instructions={instructions}/>
             <hr/>
             <form className="algorithm__form" noValidate onSubmit={handleSubmit(handleResults)}>
                 <div className="form__item_group">

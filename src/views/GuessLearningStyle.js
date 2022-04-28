@@ -20,7 +20,7 @@ const GuessLearningStyle = () => {
     }
     return (
         <div className="container__">
-            <SectionHeader title= "Adivinar estilo de aprendizaje" instructions={instructions}/>
+            <SectionHeader instructionTitle="Adivinar estilo de aprendizaje" title= "Adivinar estilo de aprendizaje" instructions={instructions}/>
             <hr/>
             <form className="algorithm__form" noValidate onSubmit={handleSubmit(handleResults)}>
                 <div className="form__item_group">
