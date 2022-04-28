@@ -5,7 +5,7 @@ import "../styles/ProfessorType.css";
 import CalcButton from '../components/CalcButton';
 import { useState } from "react";
 import exercise from "../service/exercise"
-
+import Loader from "../components/Layout/Loader";
 const ProfessorType = () => {
     const instructions = [
         "Usted como prefesor, con el fin de determinar si es principiante, intermedio o avanzado...",
@@ -14,10 +14,13 @@ const ProfessorType = () => {
      ];
      const [result, setResult] = useState(null);
      const { register, handleSubmit } = useForm();
+     const [isLoading, setIsloading] = useState(false);
      const handleResults = (data) => {
+        setIsloading(true);
         exercise.getProfessorType(data).then(response=>{
             setResult(response);
         });
+        setIsloading(false);
     }
     return (
         <div className="container__">
@@ -40,6 +43,12 @@ const ProfessorType = () => {
                 </div>
                 <CalcButton/>
             </form>
+            {
+                isLoading===true?
+                    <Loader/>
+                :
+                    <></>
+            }
             {
         result?
                 <div className="result__">

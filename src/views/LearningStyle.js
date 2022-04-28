@@ -4,6 +4,7 @@ import CalcButton from '../components/CalcButton';
 import { useForm } from "react-hook-form";
 import exercise from '../service/exercise';
 import SectionHeader from '../components/Layout/SectionHeader';
+import Loader from "../components/Layout/Loader";
 
 const LearningStyle = () => {
    const instructions = [
@@ -13,6 +14,7 @@ const LearningStyle = () => {
        "De inmediato encontrará nueve series o líneas de cuatro palabras cada una. Ordene de mayor a menor cada serie o juego de cuatro palabras que hay en cada línea, ubicando 4 en la palabra que mejor caracteriza su estilo de aprendizaje, un 3 en la palabra siguiente en cuanto a la correspondencia con su estilo; a la siguiente un 2, y un 1 a la palabra que menos caracteriza su estilo. Tenga cuidado de ubicar un número distinto al lado de cada palabra en la misma línea."
    ];
    const [result, setResult]=useState(null);
+   const [isLoading, setIsloading] = useState(false);
    const [styles, setStyles]=useState({ea:0,ec:0,or:0,ca:0});
    const { register, handleSubmit } = useForm();
    const handleResults = (d) => {
@@ -38,11 +40,12 @@ const LearningStyle = () => {
         parseInt(d["7"])+parseInt(d["16"])+parseInt(d["25"])+parseInt(d["34"])+parseInt(d["8"])+parseInt(d["17"])+parseInt(d["26"])+
         parseInt(d["35"])+parseInt(d["9"])+parseInt(d["18"])+parseInt(d["27"])+parseInt(d["36"])
         });
-
+        setIsloading(true);
 //     console.log("Valor de ec: "+ ec + " Valor de or: "+ or + " Valor de ca: "+ ca + " Valor de ea: "+ ea);
     exercise.getLearningStyle({ec:styles.ec,or:styles.or,ca:styles.ca,ea:styles.ea}).then(response=>{
         setResult(response);
       });
+      setIsloading(false);
    }
     return (
     <div className="container__"> 
@@ -99,7 +102,12 @@ const LearningStyle = () => {
             {/* {"estilos: "+ styles.ea + " " + styles.ca + " "+ styles.or + " "+ styles.ec} */}
             <CalcButton/>
        </form>   
-
+       {
+         isLoading===true?
+                <Loader/>
+        :
+                 <></>
+            }
         {
         result?
                 <div className="result__">

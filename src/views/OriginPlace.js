@@ -6,7 +6,7 @@ import exercise from "../service/exercise";
 import { useState } from "react";
 import Loader from "../components/Layout/Loader";
 const OriginPlace = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,formState:{errors} } = useForm();
     const instructions = [
        "Para utilizar este algoritmo correctamente debe seleccionar su estilo de aprendizaje (convergente,divergente, asimilador, acomodador).",
        "Debe seccionar Su último promedio de matrícula y su sexo.",
@@ -32,14 +32,20 @@ const OriginPlace = () => {
                     </div>
                     <div className="form__item">
                         <label>Prom. Matricula: </label>
-                        <input {...register("average")} type={"number"}></input>
+                        <input {...register("average",{ required: errors?true:false })} type={"number"}></input>
+                        {
+                            errors?
+                                errors["average"] && <p style={{color:"red", fontSize:"15px"}}>{"*ingrese promedio"}</p>
+                            :
+                                <></>
+                        }
                     </div>
                     <ResponseItem advanced={true} options={["M","F"]} register={register} name="genre" type={" Sexo"}/>
                 </div>
                 <CalcButton/>
             </form>
             {
-                isLoading?
+                isLoading===true?
                     <Loader/>
                 :
                     <></>

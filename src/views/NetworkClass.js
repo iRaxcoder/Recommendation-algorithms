@@ -4,19 +4,22 @@ import { useForm } from "react-hook-form";
 import ResponseItem from "../components/ResponseItem";
 import exercise from "../service/exercise";
 import { useState } from "react";
-
+import Loader from "../components/Layout/Loader";
 const NetworkClass = () => {
     const instructions = [
         "Con el fin de poder clasificar la clase de red (A o B), se encuentra el presente algoritmo.",
         "Debe responder a los criterios de fiabilidad, número de links, capacidad de red (Baja, media o alta)."
         ,"Por último seleccionar el costo de la red (bajo, medio, alto)."
      ];
-     const { register, handleSubmit } = useForm();
+     const { register, handleSubmit, formState: { errors } } = useForm();
+     const [isLoading, setIsloading] = useState(false);
      const [result, setResult]=useState(null);
      const handleResults = (data) => {
+        setIsloading(true);
         exercise.getClassType(data).then(response=>{
             setResult(response);
         });
+        setIsloading(false);
     }
     return (
         <div className="container__">
@@ -29,7 +32,13 @@ const NetworkClass = () => {
                     </div>
                     <div className="form__item">
                         <label>Número de links: </label>
-                        <input {...register("range")} type={"number"} min={7} max={20}></input>
+                        <input {...register("range",{ required: errors ?true:false })} type={"number"} min={7} max={20}></input>
+                        {
+                            errors?
+                                errors["range"] && <p style={{color:"red", fontSize:"15px"}}>{"*ingrese links"}</p>
+                            :
+                            <></>
+                        }
                     </div>
                     <div className="form__item">
                     <ResponseItem val={["Low","Medium","High"]} advanced={true} options={["Baja","Media","Alta"]} register={register} name="capacity" type={" Capacidad"}/>
@@ -40,6 +49,12 @@ const NetworkClass = () => {
                 </div>
                 <CalcButton/>
             </form>
+            {
+                isLoading===true?
+                    <Loader/>
+                :
+                    <></>
+            }
             {
                 result?
                         <div className="result__">
