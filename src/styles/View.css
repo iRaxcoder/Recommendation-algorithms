@@ -142,7 +142,7 @@ select{
     }
 
     .result__{
-        overflow-x: auto;
+        overflow-x: scroll;
     }
 
     
