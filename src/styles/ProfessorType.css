@@ -3,7 +3,7 @@
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(4,50%);
-    background:#f1cdbd;
+    background:#dce4e4;
     grid-auto-rows: minmax(auto,auto);
     -webkit-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 1px 21px -5px rgba(0,0,0,0.75);
