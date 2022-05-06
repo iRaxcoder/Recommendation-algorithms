@@ -12,7 +12,7 @@ const Menu = () => {
     }
     return (
     <div className="menu__container"> 
-        <h1 className="menu__title">Algoritmos de recomendación</h1>
+        <h1 className="menu__title">Distancia Euclidiana</h1>
         <button onClick={onToggleAction} className="menu__toggle"></button>
         <hr></hr>
         <nav className={menuMainClass+isVisibleToggle}>
