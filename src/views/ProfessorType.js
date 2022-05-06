@@ -27,7 +27,7 @@ const ProfessorType = () => {
             <SectionHeader instructionTitle="Adivinar tipo de profesor" title= "Adivinar tipo de profesor" instructions={instructions}/>
             <hr/>
             <form noValidate onSubmit={handleSubmit(handleResults)}>
-                <div className='response__container'>
+                <div className='response__container_'>
                         <div className='style__container'>
                                 <ResponseItem advanced={true} val={[1,2,3]} options={["<=30",">30 y <=55",">55"]} register={register} name="A" type={"Edad "}/>
                                 <ResponseItem advanced={true} val={["F","M","NA"]} options={["Femenino","Masculino","NA"]} register={register} name="B" type={"Género"}/>
